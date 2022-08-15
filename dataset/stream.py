@@ -17,6 +17,7 @@ class DataStream:
 
         self.attributes = []
         for idx, name in enumerate(df.columns[:-1]):
+            
             if attrTypes is None:
                 if df[name].dtype == object:
                     self.attributes.append(Attr(idx, AttrType.CATE, name))
@@ -27,7 +28,7 @@ class DataStream:
 
         self.n_class = len(set(df.iloc[:, -1]))
         self.X, self.y = df.iloc[:, :-1].values, df.iloc[:, -1].values
-
+        # import pdb;pdb.set_trace()
         for index, attr in enumerate(self.attributes):
             if attr.type == AttrType.CATE:
                 attr.values = list(set(self.X[:, index]))

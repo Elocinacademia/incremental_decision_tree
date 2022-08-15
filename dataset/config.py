@@ -1,13 +1,19 @@
 
+
 from model.utils import AttrType
 import sys
 sys.path.append('..')
 
 datasets_config = {
+    # 'forest': {
+    #     'csv_path': './dataset/forest/covtype.csv',
+    #     'yml_config': './experiments/yamls/forest.yml',
+    #     'attr_types': [AttrType.NUME] * 10 + [AttrType.CATE] * 44
+    # },
     'forest': {
-        'csv_path': './dataset/forest/covtype.csv',
+        'csv_path': './dataset/forest/smarthome.csv',
         'yml_config': './experiments/yamls/forest.yml',
-        'attr_types': [AttrType.NUME] * 10 + [AttrType.CATE] * 44
+        'attr_types': [AttrType.NUME] * 1 + [AttrType.CATE] * 8
     },
     'skin': {
         'csv_path': './dataset/skin/skin.csv',
@@ -49,5 +55,11 @@ datasets_config = {
         'csv_path': './dataset/moa/dataset4.csv',
         'yml_config': './experiments/yamls/moa.yml',
         'attr_types': [AttrType.CATE] * 5
+    },
+    'smarthome':{
+        'csv_path': './dataset/smarthome/smarthome.csv',
+        'yml_config': './experiments/yamls/smarthome.yml',
+        'attr_types': [AttrType.NUME] * 1 + [AttrType.CATE] * 8
     }
 }
+
